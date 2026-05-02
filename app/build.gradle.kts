@@ -10,6 +10,7 @@ plugins {
     // Apply the application plugin to add support for building a CLI application in Java.
     application
     checkstyle
+    id("org.sonarqube") version "7.3.0.8198"
 }
 
 repositories {
@@ -42,4 +43,11 @@ java {
 application {
     // Define the main class for the application.
     mainClass = "hexlet.code.App"
+}
+
+sonar {
+    properties {
+        property("sonar.projectKey", "GingerCitrusTea_qa-auto-engineer-java-project-61")
+        property("sonar.organization", "gingercitrustea")
+    }
 }
